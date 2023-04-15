@@ -11,7 +11,7 @@ import SwiftUI
 struct The_Daily_StretchApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            mainPage()
         }
     }
 }
