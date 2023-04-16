@@ -17,13 +17,14 @@ struct MainPage: View {
         NavigationView{
             VStack{
                 Text(Date(), style: .date)
-                    .padding(.top, 10)
+                    .padding(.top, UIScreen.main.bounds.height * -0.03)
                 Text("The Daily Stretch")
                     .font(
                     .custom("raleway", size: 34)
                     .weight(.heavy)
                     ) // end font
-//                    .padding(.bottom, UIScreen.main.bounds.height * 0.455)
+                    .padding(.top, UIScreen.main.bounds.height * -0.01)
+                    .padding(.bottom, UIScreen.main.bounds.height * 0.01)
                 // All buttons
                 VStack(alignment: .leading){
                     // align the buttons to the rings
@@ -39,7 +40,7 @@ struct MainPage: View {
                         
                         // Button to open youtube link view
                         NavigationLink(destination: StretchVideo()) {
-                            Text("Stretch Page")
+                            Text("Body Stretch")
                             .foregroundColor(Color.black)
                             .padding(.all, 13.0)
                             .background(Color.green)
@@ -47,6 +48,7 @@ struct MainPage: View {
 
                         }// end navigation link
                     } // end hstack1
+//                    .background("Body")
                     HStack{
                         Ring(lineWidth: 20, backgroundColor: Color.red.opacity(0.2), foregroundColor: Color.red,
                              percentage: percentage2)
@@ -55,9 +57,9 @@ struct MainPage: View {
                             self.percentage2 = 50
                         }
                         .offset(x:  -150.0)
-                        // journalling page
-                        NavigationLink(destination: MainPageOld()) {
-                            Text("Other Page")
+                        // news page
+                        NavigationLink(destination: newsView()) {
+                            Text("Mind Stretch")
                             .foregroundColor(Color.black)
                             .padding(.all, 13.0)
                             .background(Color.green)
@@ -76,7 +78,7 @@ struct MainPage: View {
                         .offset(x:  -150.0)
                         // journalling page
                         NavigationLink(destination: JournalView()) {
-                            Text("Journal Page")
+                            Text("Soul Stretch")
                             .foregroundColor(Color.black)
                             .padding(.all, 13.0)
                             .background(Color.green)
@@ -84,10 +86,12 @@ struct MainPage: View {
 
                         }// end navigation link
                     }// end hstack3
-                } // end zstack
-            }// end vstack
+                } // end Vstack of buttons and rings
+            }// end vstack of title and buttons
             .navigationBarHidden(true)
+
         } // end nav
+
     } // end view
 
 } // end struct
