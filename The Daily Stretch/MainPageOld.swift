@@ -53,3 +53,8 @@ struct mainPageOld: View {
     }//end view
 }//end struct
 
+struct mainPageOld_Previews: PreviewProvider {
+    static var previews: some View {
+        mainPageOld()
+    }
+}
