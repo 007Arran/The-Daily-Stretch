@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct mainPageOld: View {
+struct MainPageOld: View {
         
     var body: some View {
             // make entire screen a page
@@ -53,3 +53,8 @@ struct mainPageOld: View {
     }//end view
 }//end struct
 
+struct MainPageOld_Previews: PreviewProvider {
+    static var previews: some View {
+        MainPageOld()
+    }
+}
