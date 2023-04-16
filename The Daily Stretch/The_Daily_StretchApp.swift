@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct The_Daily_StretchApp: App {
+    
+    @StateObject private var dataController = DataController()
+    
     var body: some Scene {
         WindowGroup {
             MainPage()
+                .environment(\.managedObjectContext, dataController.container.viewContext)
         }
     }
 }

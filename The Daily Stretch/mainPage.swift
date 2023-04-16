@@ -13,6 +13,7 @@ struct MainPage: View {
     @State var percentage3: Double = 0
     
     
+    
     var body: some View {
         NavigationView{
             VStack{
@@ -77,21 +78,23 @@ struct MainPage: View {
                         }
                         .offset(x:  -150.0)
                         // journalling page
-                        NavigationLink(destination: JournalView()) {
+                        NavigationLink(destination: goalsView()) {
                             Text("Soul Stretch")
                             .foregroundColor(Color.black)
                             .padding(.all, 13.0)
                             .background(Color.green)
                             .cornerRadius(15)
+                            
 
                         }// end navigation link
+                        
                     }// end hstack3
                 } // end Vstack of buttons and rings
             }// end vstack of title and buttons
             .navigationBarHidden(true)
 
         } // end nav
-
+        
     } // end view
 
 } // end struct
