@@ -10,12 +10,12 @@ import SwiftUI
 @main
 struct The_Daily_StretchApp: App {
     
-    @StateObject private var dataController = DataController()
+//    @StateObject private var dataController = DataController()
+    @StateObject private var store = GoalStore()
     
     var body: some Scene {
         WindowGroup {
-            MainPage()
-                .environment(\.managedObjectContext, dataController.container.viewContext)
+            MainPage(store: store)
         }
     }
 }

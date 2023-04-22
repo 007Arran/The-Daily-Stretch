@@ -11,10 +11,12 @@ struct MainPage: View {
     @State var percentage1: Double = 0
     @State var percentage2: Double = 0
     @State var percentage3: Double = 0
+    @ObservedObject var store: GoalStore
     
     
     
     var body: some View {
+        NotificationView()
         NavigationView{
             VStack{
                 Text(Date(), style: .date)
@@ -36,7 +38,7 @@ struct MainPage: View {
                         .frame(width: 200, height: 200)
                         .onTapGesture {
                         self.percentage1 = 50
-                        }
+                        }// end ring
                         .offset(x: -150)
                         
                         // Button to open youtube link view
@@ -56,7 +58,7 @@ struct MainPage: View {
                         .frame(width: 200, height: 200)
                         .onTapGesture {
                             self.percentage2 = 50
-                        }
+                        }// end ring
                         .offset(x:  -150.0)
                         // news page
                         NavigationLink(destination: newsView()) {
@@ -75,10 +77,10 @@ struct MainPage: View {
                         .frame(width: 200, height: 200)
                         .onTapGesture {
                             self.percentage3 = 50
-                        }
+                        } //end ring
                         .offset(x:  -150.0)
                         // journalling page
-                        NavigationLink(destination: goalsView()) {
+                        NavigationLink(destination: goalsView3(store: store)) {
                             Text("Soul Stretch")
                             .foregroundColor(Color.black)
                             .padding(.all, 13.0)
@@ -89,6 +91,7 @@ struct MainPage: View {
                         }// end navigation link
                         
                     }// end hstack3
+
                 } // end Vstack of buttons and rings
             }// end vstack of title and buttons
             .navigationBarHidden(true)
@@ -101,7 +104,7 @@ struct MainPage: View {
 
 struct MainPage_Previews: PreviewProvider {
     static var previews: some View {
-        MainPage()
+        MainPage(store: testStore)
     }
 }
 
